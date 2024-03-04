@@ -33,11 +33,10 @@ class PoeBot:
         if (config["cookie"] is None or config["bot"] is None or config["plat"] is None):
             return
         options = webdriver.ChromeOptions()
-        options.headless=True
         options.add_argument("--window-size=1920,1080")
         options.add_argument('--ignore-certificate-errors')
         options.add_argument('--allow-running-insecure-content')
-        options.add_argument('--headless')
+        options.add_argument("--headless=new")
         self.driver = uc.Chrome(options=options)
         self.driver.get("https://poe.com/login?redirect_url=%2F")
         self.driver.add_cookie({"name": "p-b", "value": config['cookie']})
