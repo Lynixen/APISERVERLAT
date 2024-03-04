@@ -37,7 +37,7 @@ class PoeBot:
         options.add_argument('--ignore-certificate-errors')
         options.add_argument('--allow-running-insecure-content')
         options.add_argument("--headless=new")
-        self.driver = uc.Chrome(options=options)
+        self.driver = uc.Chrome(options=options, headless=True)
         self.driver.get("https://poe.com/login?redirect_url=%2F")
         self.driver.add_cookie({"name": "p-b", "value": config['cookie']})
         self.driver.add_cookie({"name": "p-lat", "value": config["plat"]})
