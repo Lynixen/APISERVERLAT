@@ -33,7 +33,7 @@ class PoeBot:
         if (config["cookie"] is None or config["bot"] is None or config["plat"] is None):
             return
         options = webdriver.ChromeOptions()
-        self.driver = uc.Chrome(options=options, headless=False)
+        self.driver = uc.Chrome(options=options, headless=True)
         self.driver.get("https://poe.com/login?redirect_url=%2F")
         self.driver.add_cookie({"name": "p-b", "value": config['cookie']})
         self.driver.add_cookie({"name": "p-lat", "value": config["plat"]})
